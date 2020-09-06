@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+
+{% block body %}
+
+ <form action="" method="POST" enctype="multipart/form-data">
+     {% csrf_token%}
+     name: <input type="text" name='name' value="{{data.name}}"> <br>
+     photo: <input type="file" name="photo" value="{{data.photo}}"> <br>
+     City state:<select name="city_state"  >
+        <option value="{{data.city_state}}">{{data.city_state}}</option>
+      </select> <br>
+      <input type="submit" value="update">
+ </form>
+{% endblock %}
